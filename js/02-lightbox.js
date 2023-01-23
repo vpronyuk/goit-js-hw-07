@@ -15,18 +15,10 @@ const gallery = galleryItems
   .join("");
 
 imagesEl.insertAdjacentHTML("afterbegin", gallery);
-imagesEl.addEventListener("click", onImageClick);
 
-function onImageClick(event) {
-  event.preventDefault();
-  const isImageElement = event.target.classList.contains("gallery__image");
-  if (!isImageElement) {
-    return;
-  }
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
 
 console.log(galleryItems);
